@@ -1,0 +1,52 @@
+<svg width="760" height="360" viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="760" height="360" fill="white"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <text x="44" y="42" font-size="22" fill="#0f172a" font-weight="bold">XOR as a Multilayer Perceptron</text>
+
+  <rect x="400" y="24" width="320" height="68" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="420" y="50" font-size="14" fill="#0f172a">XOR(x1, x2) = AND(NAND(x1, x2), OR(x1, x2))</text>
+  <text x="420" y="72" font-size="13" fill="#475569">First layer: NAND and OR</text>
+  <text x="420" y="88" font-size="13" fill="#475569">Second layer: AND combines the two hidden outputs</text>
+
+  <circle cx="110" cy="110" r="28" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+  <circle cx="110" cy="250" r="28" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+  <text x="110" y="116" text-anchor="middle" font-size="20" fill="#0f172a">x1</text>
+  <text x="110" y="256" text-anchor="middle" font-size="20" fill="#0f172a">x2</text>
+  <text x="66" y="312" font-size="14" fill="#475569">Input layer</text>
+
+  <circle cx="330" cy="110" r="36" fill="#fde68a" stroke="#92400e" stroke-width="2"/>
+  <circle cx="330" cy="250" r="36" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="330" y="105" text-anchor="middle" font-size="16" fill="#0f172a">NAND</text>
+  <text x="330" y="124" text-anchor="middle" font-size="12" fill="#334155">s1</text>
+  <text x="330" y="245" text-anchor="middle" font-size="16" fill="#0f172a">OR</text>
+  <text x="330" y="264" text-anchor="middle" font-size="12" fill="#334155">s2</text>
+  <text x="266" y="312" font-size="14" fill="#475569">Hidden layer</text>
+
+  <circle cx="600" cy="180" r="42" fill="#fecaca" stroke="#b91c1c" stroke-width="2"/>
+  <text x="600" y="174" text-anchor="middle" font-size="16" fill="#0f172a">AND</text>
+  <text x="600" y="194" text-anchor="middle" font-size="12" fill="#334155">y = XOR</text>
+  <text x="548" y="312" font-size="14" fill="#475569">Output layer</text>
+
+  <line x1="138" y1="102" x2="294" y2="110" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="138" y1="118" x2="294" y2="242" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="138" y1="242" x2="294" y2="118" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="138" y1="258" x2="294" y2="250" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <line x1="366" y1="120" x2="556" y2="168" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="366" y1="240" x2="556" y2="192" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="398" y="112" width="138" height="24" rx="8" fill="white" stroke="#e2e8f0"/>
+  <text x="467" y="128" text-anchor="middle" font-size="12" fill="#475569">s1 = NAND(x1, x2)</text>
+
+  <rect x="398" y="224" width="120" height="24" rx="8" fill="white" stroke="#e2e8f0"/>
+  <text x="458" y="240" text-anchor="middle" font-size="12" fill="#475569">s2 = OR(x1, x2)</text>
+
+  <rect x="38" y="326" width="684" height="24" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="380" y="342" text-anchor="middle" font-size="13" fill="#334155">A single perceptron cannot separate XOR with one line, but two first-layer gates plus one second-layer gate can.</text>
+</svg>
