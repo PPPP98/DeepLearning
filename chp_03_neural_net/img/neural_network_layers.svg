@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" role="img" aria-labelledby="title desc">
   <title id="title">Example neural network diagram</title>
-  <desc id="desc">A simple neural network with an input layer, two hidden layers, and an output layer.</desc>
+  <desc id="desc">A simple neural network with an input layer, two hidden layers, and one output layer with two nodes.</desc>
   <defs>
     <style>
       .bg { fill: #f8fafc; }
@@ -23,7 +23,7 @@
   <text class="label" x="95" y="108">Input Layer</text>
   <text class="label" x="325" y="108">Hidden Layer 1</text>
   <text class="label" x="525" y="108">Hidden Layer 2</text>
-  <text class="label" x="740" y="108">Output Layer</text>
+  <text class="label" x="720" y="108">Output Layer</text>
 
   <line class="edge" x1="160" y1="160" x2="365" y2="140" />
   <line class="edge" x1="160" y1="160" x2="365" y2="220" />
@@ -42,8 +42,10 @@
   <line class="edge" x1="405" y1="300" x2="585" y2="180" />
   <line class="edge" x1="405" y1="300" x2="585" y2="280" />
 
-  <line class="edge" x1="625" y1="180" x2="790" y2="220" />
-  <line class="edge" x1="625" y1="280" x2="790" y2="220" />
+  <line class="edge" x1="625" y1="180" x2="790" y2="180" />
+  <line class="edge" x1="625" y1="180" x2="790" y2="280" />
+  <line class="edge" x1="625" y1="280" x2="790" y2="180" />
+  <line class="edge" x1="625" y1="280" x2="790" y2="280" />
 
   <circle class="node-input" cx="160" cy="160" r="24" />
   <circle class="node-input" cx="160" cy="240" r="24" />
@@ -56,10 +58,12 @@
   <circle class="node-hidden" cx="605" cy="180" r="24" />
   <circle class="node-hidden" cx="605" cy="280" r="24" />
 
-  <circle class="node-output" cx="790" cy="220" r="26" />
+  <circle class="node-output" cx="790" cy="180" r="24" />
+  <circle class="node-output" cx="790" cy="280" r="24" />
 
   <text class="caption" x="104" y="170">x1</text>
   <text class="caption" x="104" y="250">x2</text>
   <text class="caption" x="104" y="330">x3</text>
-  <text class="caption" x="772" y="268">y</text>
+  <text class="caption" x="762" y="168">y1</text>
+  <text class="caption" x="762" y="308">y2</text>
 </svg>
