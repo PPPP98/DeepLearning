@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" role="img" aria-labelledby="title desc">
+  <title id="title">Example neural network diagram</title>
+  <desc id="desc">A simple neural network with an input layer, two hidden layers, and an output layer.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .panel { fill: #ffffff; stroke: #d8dee9; stroke-width: 1.5; rx: 22; }
+      .node-input { fill: #3b82f6; }
+      .node-hidden { fill: #f59e0b; }
+      .node-output { fill: #10b981; }
+      .edge { stroke: #94a3b8; stroke-width: 2; opacity: 0.6; }
+      .title { fill: #0f172a; font-family: Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 700; }
+      .label { fill: #334155; font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 600; }
+      .caption { fill: #475569; font-family: Arial, Helvetica, sans-serif; font-size: 16px; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="900" height="420" rx="28" />
+  <rect class="panel" x="24" y="24" width="852" height="372" />
+
+  <text class="title" x="40" y="62">Neural Network Example</text>
+
+  <text class="label" x="95" y="108">Input Layer</text>
+  <text class="label" x="325" y="108">Hidden Layer 1</text>
+  <text class="label" x="525" y="108">Hidden Layer 2</text>
+  <text class="label" x="740" y="108">Output Layer</text>
+
+  <line class="edge" x1="160" y1="160" x2="365" y2="140" />
+  <line class="edge" x1="160" y1="160" x2="365" y2="220" />
+  <line class="edge" x1="160" y1="160" x2="365" y2="300" />
+  <line class="edge" x1="160" y1="240" x2="365" y2="140" />
+  <line class="edge" x1="160" y1="240" x2="365" y2="220" />
+  <line class="edge" x1="160" y1="240" x2="365" y2="300" />
+  <line class="edge" x1="160" y1="320" x2="365" y2="140" />
+  <line class="edge" x1="160" y1="320" x2="365" y2="220" />
+  <line class="edge" x1="160" y1="320" x2="365" y2="300" />
+
+  <line class="edge" x1="405" y1="140" x2="585" y2="180" />
+  <line class="edge" x1="405" y1="140" x2="585" y2="280" />
+  <line class="edge" x1="405" y1="220" x2="585" y2="180" />
+  <line class="edge" x1="405" y1="220" x2="585" y2="280" />
+  <line class="edge" x1="405" y1="300" x2="585" y2="180" />
+  <line class="edge" x1="405" y1="300" x2="585" y2="280" />
+
+  <line class="edge" x1="625" y1="180" x2="790" y2="220" />
+  <line class="edge" x1="625" y1="280" x2="790" y2="220" />
+
+  <circle class="node-input" cx="160" cy="160" r="24" />
+  <circle class="node-input" cx="160" cy="240" r="24" />
+  <circle class="node-input" cx="160" cy="320" r="24" />
+
+  <circle class="node-hidden" cx="385" cy="140" r="24" />
+  <circle class="node-hidden" cx="385" cy="220" r="24" />
+  <circle class="node-hidden" cx="385" cy="300" r="24" />
+
+  <circle class="node-hidden" cx="605" cy="180" r="24" />
+  <circle class="node-hidden" cx="605" cy="280" r="24" />
+
+  <circle class="node-output" cx="790" cy="220" r="26" />
+
+  <text class="caption" x="104" y="170">x1</text>
+  <text class="caption" x="104" y="250">x2</text>
+  <text class="caption" x="104" y="330">x3</text>
+  <text class="caption" x="772" y="268">y</text>
+</svg>
