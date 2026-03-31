@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900" role="img" aria-labelledby="title desc">
+  <title id="title">Loss functions guide weight updates</title>
+  <desc id="desc">A concept diagram showing how prediction, loss, gradient, and weight updates form a learning loop, with notes for sum of squares error and cross entropy error.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7f4ec"/>
+      <stop offset="100%" stop-color="#eef6f2"/>
+    </linearGradient>
+    <linearGradient id="mainCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffdfa"/>
+      <stop offset="100%" stop-color="#fff6de"/>
+    </linearGradient>
+    <linearGradient id="signalCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef3ff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M0,0 L14,7 L0,14 z" fill="#425466"/>
+    </marker>
+    <style>
+      .title { font: 700 34px 'Helvetica Neue', Arial, sans-serif; fill: #213547; }
+      .subtitle { font: 500 18px 'Helvetica Neue', Arial, sans-serif; fill: #48606f; }
+      .boxTitle { font: 700 24px 'Helvetica Neue', Arial, sans-serif; fill: #1f2d3d; }
+      .boxText { font: 500 18px 'Helvetica Neue', Arial, sans-serif; fill: #304553; }
+      .smallText { font: 500 16px 'Helvetica Neue', Arial, sans-serif; fill: #49606b; }
+      .formula { font: 700 22px 'Courier New', monospace; fill: #8f3b2e; }
+      .chip { font: 700 16px 'Helvetica Neue', Arial, sans-serif; fill: #8f3b2e; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="900" rx="32" fill="url(#bg)"/>
+
+  <text x="72" y="78" class="title">손실함수는 가중치 업데이트 신호를 만든다</text>
+  <text x="72" y="116" class="subtitle">예측과 정답의 차이를 손실로 바꾸고, 손실의 기울기를 따라 가중치를 조정하면 모델이 점점 더 나은 예측으로 이동한다.</text>
+
+  <rect x="70" y="170" width="210" height="132" rx="24" fill="url(#mainCard)" stroke="#d0bb84" stroke-width="2"/>
+  <text x="100" y="215" class="boxTitle">1. 현재 가중치</text>
+  <text x="100" y="250" class="boxText">w, b 로 시작</text>
+  <text x="100" y="280" class="smallText">모델은 현재 파라미터로</text>
+  <text x="100" y="303" class="smallText">입력을 변환한다.</text>
+
+  <rect x="320" y="170" width="210" height="132" rx="24" fill="url(#mainCard)" stroke="#d0bb84" stroke-width="2"/>
+  <text x="350" y="215" class="boxTitle">2. 예측값 생성</text>
+  <text x="350" y="250" class="boxText">순전파로 y 계산</text>
+  <text x="350" y="280" class="smallText">입력 x 에 대해 현재</text>
+  <text x="350" y="303" class="smallText">예측 y 를 만든다.</text>
+
+  <rect x="570" y="170" width="250" height="132" rx="24" fill="url(#mainCard)" stroke="#d0bb84" stroke-width="2"/>
+  <text x="600" y="215" class="boxTitle">3. 손실 계산</text>
+  <text x="600" y="250" class="boxText">정답 t 와 예측 y 비교</text>
+  <text x="600" y="280" class="smallText">틀린 방향과 크기를</text>
+  <text x="600" y="303" class="smallText">하나의 숫자 E 로 만든다.</text>
+
+  <rect x="860" y="170" width="210" height="132" rx="24" fill="url(#mainCard)" stroke="#d0bb84" stroke-width="2"/>
+  <text x="890" y="215" class="boxTitle">4. 기울기 계산</text>
+  <text x="890" y="250" class="boxText">dE/dw 를 구함</text>
+  <text x="890" y="280" class="smallText">손실이 줄어드는 방향을</text>
+  <text x="890" y="303" class="smallText">기울기가 알려준다.</text>
+
+  <path d="M280 236 L320 236" stroke="#425466" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M530 236 L570 236" stroke="#425466" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M820 236 L860 236" stroke="#425466" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="438" y="360" width="404" height="178" rx="28" fill="#fffdf8" stroke="#da9d75" stroke-width="3"/>
+  <text x="472" y="407" class="boxTitle">5. 가중치 업데이트</text>
+  <text x="472" y="446" class="formula">w ← w - η (∂E / ∂w)</text>
+  <text x="472" y="484" class="boxText">기울기와 반대 방향으로 이동</text>
+  <text x="472" y="512" class="smallText">η 는 학습률이며, 기울기가 크면 더 크게 수정한다.</text>
+
+  <path d="M965 302 L965 360 L842 360" stroke="#425466" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M438 449 L220 449 L220 302" stroke="#3c8b63" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <text x="90" y="342" class="chip">업데이트 후 다시 예측을 만든다</text>
+  <text x="90" y="366" class="smallText">이 순환이 반복되면 손실이 점점 줄어든다.</text>
+
+  <rect x="80" y="610" width="520" height="210" rx="28" fill="url(#signalCard)" stroke="#86a8d5" stroke-width="2"/>
+  <text x="116" y="658" class="boxTitle">오차제곱합이 주는 학습 신호</text>
+  <text x="116" y="700" class="formula">∂E/∂y_k = y_k - t_k</text>
+  <text x="116" y="740" class="boxText">예측이 정답보다 크면 줄이고, 작으면 키우는 방향을 만든다.</text>
+  <text x="116" y="770" class="smallText">오차의 크기 자체가 수정 강도가 되므로 큰 오차를 먼저 줄이는 데 유리하다.</text>
+
+  <rect x="680" y="610" width="520" height="210" rx="28" fill="#fffdfd" stroke="#d7a0a0" stroke-width="2"/>
+  <text x="716" y="658" class="boxTitle">교차 엔트로피가 주는 학습 신호</text>
+  <text x="716" y="700" class="formula">∂E/∂y_k = - t_k / y_k</text>
+  <text x="716" y="740" class="boxText">정답 클래스 확률이 낮을수록 더 강한 수정 신호를 만든다.</text>
+  <text x="716" y="770" class="smallText">분류 문제에서는 정답 클래스에 확률을 집중하도록 더 분명한 방향을 주는 경우가 많다.</text>
+
+  <text x="72" y="864" class="subtitle">핵심: 손실함수는 단순한 점수표가 아니라, 미분 가능한 형태로 오차를 표현해 학습 가능한 업데이트 규칙으로 연결해 준다.</text>
+</svg>
